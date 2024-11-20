@@ -1,0 +1,170 @@
+.titulo {
+  margin-top: 32px;
+}
+
+.titulo > div {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.titulo-img {
+  height: 100px;
+}
+
+.titulo-textos {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+.carrousel-cartas {
+  margin-top: 64px;
+  position: relative;
+}
+
+.swiper {
+  padding-bottom: 88px !important;
+}
+
+/* Tudo do swiper vai ter esse estilo */
+/* Fazer com que não dee pra selecionar */
+
+/* !important faz com que mesmo que o css importado do swiper tenho um width para o .slider esse estilo seja considerado o mais importante */
+.slide {
+  padding-top: 50px !important;
+}
+
+.carrousel-cartas .swiper-slide {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Coloca 50px pra baixo */
+.carrousel-cartas .swiper-slide:hover,
+.carrousel-cartas .swiper-slide.hover-active {
+  transform: translateY(-50px) !important;
+}
+
+.swiper-button-disabled {
+  cursor: not-allowed !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative !important;
+}
+
+.swiper-setas {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 48px;
+}
+
+.swiper-setas * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.swiper-setas div {
+  height: 56px;
+  width: 56px;
+  border-radius: 56px;
+  border: 1px solid #eaecf0;
+  transition: all 0.3s;
+}
+
+.swiper-setas div:hover {
+  background-color: #eaecf0;
+}
+
+.swiper-setas div img {
+  height: 16px;
+}
+
+.swiper-setas div::after {
+  font-family: none;
+  font-size: 0px;
+}
+
+.carta {
+  border-radius: 16px;
+  cursor: pointer;
+  object-fit: contain;
+  max-height: 600px;
+}
+
+.detalhes {
+  margin-bottom: 64px;
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.detalhes-img {
+  object-fit: cover;
+  border-radius: 16px;
+  transition: opacity 0.3s, object-fit 0.3s;
+}
+
+@media only screen and (min-width: 500px) {
+  .detalhes-img {
+    width: auto !important;
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .detalhes {
+    flex-direction: row;
+  }
+
+  .detalhes-img {
+    max-height: 1000px !important;
+    object-fit: cover;
+    width: 600px !important;
+  }
+}
+
+.lendas h2 {
+  margin-bottom: 32px;
+  margin-top: 64px;
+}
+
+.detalhes-textos div p {
+  margin-bottom: 16px;
+}
+
+.caracteristicas {
+  background-color: #eaecf5;
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 32px;
+}
+
+.detalhes-textos {
+  flex: 3;
+}
+
+.caracteristicas {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.carrousel-cartas,
+.swiper-cartas,
+.swiper-wrapper {
+  max-width: 100vw;
+}
