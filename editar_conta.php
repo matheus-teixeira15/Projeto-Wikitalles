@@ -22,8 +22,8 @@
         $_SESSION['nome'] = $new_nome;
         $_SESSION['email'] = $new_email;
 
-        //Insere na variável $msg uma mensagem confirmando a alteração dos dados
-        $msg = 'Seus dados foram alterados com sucesso';
+        //Insere na variável $success uma mensagem confirmando a alteração dos dados
+        $success = 'success';
     }
 ?>
 
@@ -33,6 +33,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/editar_conta.css" type="text/css">
+        <link rel="stylesheet" href="css/notificaçao.css" type="text/css">
         <link rel="stylesheet" href="css/compartilhado.css" type="text/css">
         <title>Editar Conta | WikitalleS</title>
         <link
@@ -41,6 +42,8 @@
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Link pros ícones das notificações -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     </head>
     <body>
         <a href="index.php">
@@ -52,14 +55,20 @@
             title="Wikitalles logotipo"
             />
         </a>
-        <div class="editar-container">
+        <ul class="notifications"></ul>
+        <div class="form-container">
             <h2>Editar Conta</h2>
             <?php
 
-                //Exibe mensagem de confirmação
-                if(isset($msg)){
-                    echo "<span class='confmsg' style='color:green'>" . $msg . "</span>";
+                $msg = 'empty';
+
+                if (isset($success)) {
+                    $msg = $success;
                 }
+
+                echo "<div class='toastTrigger'>";
+                    echo "<input type='hidden' class='hiddeninput' id='success' name='hiddencontainer' value='$msg'/>";
+                echo "</div>";
 
                 $nome = $_SESSION['nome'];
                 $email = $_SESSION['email'];
@@ -70,11 +79,13 @@
                     echo "<label for='email'>".'E-mail:'."</label>";
                     echo "<input type='email' id='email' name='email' value='$email'>";
                     echo "<label for='senha'>".'Senha:'."</label>";
-                    echo "<input type='password' id='senha' name='senha'>";
+                    echo "<input type='password' id='senha' name='senha' placeholder='Se não quiser mudar coloque a mesma senha'>";
                     echo "<input type='submit' id='submit' name='submit' value='Salvar'>";
                 echo "</form>";
             ?>
             <a href="index.php"><button type="button" id="criar-link">Voltar</button></a>
         </div>
+        <!-- Importação do javascript -->
+        <script src="./js/forms.js" defer></script>
     </body>
 </html>

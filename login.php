@@ -33,8 +33,8 @@
 
         else {
 
-            //False: exibe uma mensagem de erro para o usuário alertando que o e-mail ou a senha estão errados
-            $msg = 'E-mail ou senha incorretos. Tente novamente';
+            //False: cria a variável $error. Ela vai ser inserida na $msg pra ativar a função da notificação de erro
+            $error = 'error';
         }
     }
 ?>
@@ -45,6 +45,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/login.css" type="text/css">
+        <link rel="stylesheet" href="css/notificaçao.css" type="text/css">
         <link rel="stylesheet" href="css/compartilhado.css" type="text/css">
         <title>Login | WikitalleS</title>
         <link
@@ -53,6 +54,8 @@
         />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Link pros ícones das notificações -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     </head>
     <body>
         <a href="index.php">
@@ -64,15 +67,24 @@
             title="Wikitalles logotipo"
             />
         </a>
-        <div class="login-container">
+        <ul class="notifications"></ul>
+        <div class="form-container">
             <h2>Login</h2>
             <form action="login.php" method="POST">
                 <?php 
-                
-                    //Exibe mensagem de erro
-                    if(isset($msg)){
-                        echo "<span class='errormsg' style='color:red'>" . $msg . "</span>";
+
+                    //Essa variável serve para manipular o valor do input oculto
+                    $msg = 'empty';
+
+                    //Se a variável $error existir, insere o valor dela em $msg
+                    if (isset($error)) {
+                        $msg = $error;
                     }
+                    
+                    //Esse campo de input não pode ser visto pelo usuário. Quando dá erro no login o valor dele muda, ativando a notificação
+                    echo "<div class='toastTrigger'>";
+                        echo "<input type='hidden' class='hiddeninput' id='error' name='hiddencontainer' value='$msg'/>";
+                    echo "</div>";
                 ?>
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
@@ -82,5 +94,7 @@
             </form>
             <a href="criar_conta.php"><button type="button" id="criar-link">Criar conta</button></a>
         </div>
+        <!-- Importação do javascript -->
+        <script src="./js/forms.js" defer></script>
     </body>
 </html>

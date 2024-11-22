@@ -16,36 +16,36 @@ body, html {
     margin-top: 40px;
 }
 
-.editar-container {
+.form-container {
     text-align: center;
     min-width: 400px;
     width: 100%;
     margin-top: 50px;
 }
 
-.editar-container h1 {
+.form-container h1 {
     font-size: 36px;
     color: #5A5A8E;
     margin-bottom: 20px;
 }
 
-.editar-container h2 {
+.form-container h2 {
     font-size: 24px;
     color: #5A5A8E;
     margin-bottom: 20px;
 }
 
-.editar-container form {
+.form-container form {
     display: flex;
     flex-direction: column;
     margin-top: 27px;
 }
 
-.editar-container .confmsg {
+.form-container .msg {
     margin-bottom: 30px;
 }
 
-.editar-container label {
+.form-container label {
     text-align: left;
     color: #555;
     font-size: 14px;
@@ -53,7 +53,7 @@ body, html {
     margin-bottom: 5px;
 }
 
-.editar-container input {
+.form-container input {
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #E7EAF0;
@@ -64,19 +64,19 @@ body, html {
     color: #555;
 }
 
-.editar-container input:focus {
+.form-container input:focus {
     border-color: #5A5A8E;
 }
 
-.editar-container button:hover {
+.form-container button:hover {
     background-color: #48488e;
 }
 
-.editar-container .extra-options {
+.form-container .extra-options {
     margin-top: 20px;
 }
 
-.editar-container .extra-options a {
+.form-container .extra-options a {
     color: #5A5A8E;
     text-decoration: none;
     font-size: 14px;
@@ -85,11 +85,11 @@ body, html {
     margin-top: 10px;
 }
 
-.editar-container .extra-options a:hover {
+.form-container .extra-options a:hover {
     color: #48488e;
 }
 
-.editar-container #submit {
+.form-container #submit {
     font-size: 16px;
     margin-top: 55px;
     color: #fff;
@@ -103,7 +103,7 @@ body, html {
     cursor: pointer;
 }
 
-.editar-container #criar-link {
+.form-container #criar-link {
     font-size: 16px;
     margin-top: 28px;
     margin-bottom: 20px;
@@ -123,7 +123,7 @@ body, html {
         margin-top: 50px;
     }
 
-    .editar-container form {
+    .form-container form {
         max-width: 300px;
         margin: auto;
     }
