@@ -182,7 +182,7 @@ header.active .menu-btn .btn-line:nth-child(3) {
   display: flex;
 }
 
-/* Ícone de usuário no mobile */
+/* Ícone de usuário no mobile antes do login*/
 .material-symbols-outlined {
   font-size: 40px !important;
   z-index: 1000;
@@ -193,6 +193,18 @@ header.active .menu-btn .btn-line:nth-child(3) {
   'wght' 300,
   'GRAD' 0,
   'opsz' 40
+}
+
+.material-symbols-rounded {
+  font-size: 40px !important;
+  z-index: 1000;
+  margin-top: 3.1px;
+  color: #475467 !important;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
 }
 
 .header {
@@ -252,10 +264,11 @@ header.active .menu-btn .btn-line:nth-child(3) {
   cursor: auto;
   text-align: left;
   display: none;
+  border-radius: 4px;
   position: absolute;
   background-color: white;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.215);
   right: 0;
   z-index: 1;
 }
@@ -286,7 +299,6 @@ header.active .menu-btn .btn-line:nth-child(3) {
 .show {display: block;}
 
 /* :after cria um elemento abaixo para fazer a linha em baixo  */
-/* Muita ajuda do chat GPT aqui */
 .header-link::after {
   content: "";
   position: absolute;

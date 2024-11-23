@@ -79,7 +79,7 @@
                     echo "<label for='email'>".'E-mail:'."</label>";
                     echo "<input type='email' id='email' name='email' value='$email'>";
                     echo "<label for='senha'>".'Senha:'."</label>";
-                    echo "<input type='password' id='senha' name='senha' placeholder='Se não quiser mudar coloque a mesma senha'>";
+                    echo "<input type='password' id='senha' name='senha' placeholder='Se não quiser mudar é só colocar a mesma senha'>";
                     echo "<input type='submit' id='submit' name='submit' value='Salvar'>";
                 echo "</form>";
             ?>

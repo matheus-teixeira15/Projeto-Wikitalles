@@ -12,10 +12,15 @@
     <link href="./css/index.css" rel="stylesheet" type="text/css" />
     <link href="./css/reset.css" rel="stylesheet" type="text/css" />
     <link href="./css/compartilhado.css" rel="stylesheet" type="text/css" />
-    <!-- Ícone de usuário -->
+    <!-- Ícone de usuário antes do login -->
     <link 
       rel="stylesheet" 
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" 
+    />
+    <!-- Ícone de usuário depois do login -->
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" 
     />
     <!-- Fonte do Google -->
     <link
@@ -54,7 +59,7 @@
               <?php
                 if (isset($_SESSION['nome'])){
                   echo "<div class='dropdown'>";
-                    echo "<span onclick='functionDropdownMobile()' class='material-symbols-outlined dropbtn'>".'account_circle'."</span>";
+                    echo "<span onclick='functionDropdownMobile()' class='material-symbols-rounded dropbtn'>".'account_circle'."</span>";
                     echo "<div id='menu_dropdownMobile' class='dropdown-conteudo'>";
                       echo "<p>".$_SESSION['email']."</p>";
                       echo "<a href='editar_conta.php'>"."Editar conta"."</a>";
@@ -308,7 +313,7 @@
           </div>
           <div>
             <button class="botao-primario">
-              <a target="_blank" href="https://forms.gle/bRPV1zDBZZBPcPBw9">Envie uma lenda</a>
+              <a target="_blank" href="https://forms.gle/sN1jKf2fgovi1mr47">Envie uma lenda</a>
             </button>
           </div>
         </div>
