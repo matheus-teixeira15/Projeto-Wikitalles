@@ -1,7 +1,7 @@
 CREATE TABLE usuarios 
 ( 
     id integer(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-    nome varchar(20), 
+    nome varchar(25), 
     email varchar(50), 
     senha varchar(100) 
 );
