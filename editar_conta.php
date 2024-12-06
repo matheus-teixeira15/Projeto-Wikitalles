@@ -23,7 +23,7 @@
         $_SESSION['email'] = $new_email;
 
         //Insere na variável $success uma mensagem confirmando a alteração dos dados
-        $success = 'success';
+        $notif = 'success';
     }
 ?>
 
@@ -60,12 +60,15 @@
             <h2>Editar Conta</h2>
             <?php
 
+                //Essa variável serve para manipular o valor do input oculto. Por padrão ela guarda a string 'empty'
                 $msg = 'empty';
 
-                if (isset($success)) {
-                    $msg = $success;
+                //Se a variável $notif existir, insere o valor dela em $msg
+                if (isset($notif)) {
+                    $msg = $notif;
                 }
 
+                //Esse campo de input não pode ser visto pelo usuário. Quando o update for concluído o valor dele muda, ativando a função de notificação
                 echo "<div class='toastTrigger'>";
                     echo "<input type='hidden' class='hiddeninput' id='success' name='hiddencontainer' value='$msg'/>";
                 echo "</div>";
@@ -75,17 +78,17 @@
 
                 echo "<form action='editar_conta.php' method='POST'>";
                     echo "<label for='nome'>".'Nome de usuário:'."</label>";
-                    echo "<input type='text' id='nome' name='nome' value='$nome'>";
+                    echo "<input type='text' id='nome' name='nome' value='$nome' maxlength='25'>";
                     echo "<label for='email'>".'E-mail:'."</label>";
-                    echo "<input type='email' id='email' name='email' value='$email'>";
+                    echo "<input type='email' id='email' name='email' value='$email' maxlength='50'>";
                     echo "<label for='senha'>".'Senha:'."</label>";
-                    echo "<input type='password' id='senha' name='senha' placeholder='Se não quiser mudar é só colocar a mesma senha'>";
+                    echo "<input type='password' id='senha' name='senha' placeholder='Se não quiser mudar basta repetir a senha' maxlength='100'>";
                     echo "<input type='submit' id='submit' name='submit' value='Salvar'>";
                 echo "</form>";
             ?>
             <a href="index.php"><button type="button" id="criar-link">Voltar</button></a>
         </div>
         <!-- Importação do javascript -->
-        <script src="./js/forms.js" defer></script>
+        <script src="./js/forms.js"></script>
     </body>
 </html>

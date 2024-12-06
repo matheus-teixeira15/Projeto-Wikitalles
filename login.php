@@ -33,12 +33,12 @@
 
         else {
 
-            //False: cria a variável $error. Ela vai ser inserida na $msg pra ativar a função da notificação de erro
-            $error = 'error';
+            //False: cria a variável $notif. Ela vai ser inserida na $msg pra ativar a função da notificação de erro
+            $notif = 'error';
         }
     }
 ?>
-
+  
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -73,15 +73,15 @@
             <form action="login.php" method="POST">
                 <?php 
 
-                    //Essa variável serve para manipular o valor do input oculto
+                    //Essa variável serve para manipular o valor do input oculto. Por padrão ela guarda a string 'empty'
                     $msg = 'empty';
 
-                    //Se a variável $error existir, insere o valor dela em $msg
-                    if (isset($error)) {
-                        $msg = $error;
+                    //Se a variável $notif existir, insere o valor dela em $msg
+                    if (isset($notif)) {
+                        $msg = $notif;
                     }
                     
-                    //Esse campo de input não pode ser visto pelo usuário. Quando dá erro no login o valor dele muda, ativando a notificação
+                    //Esse campo de input não pode ser visto pelo usuário. Quando dá erro no login o valor dele muda, ativando a função de notificação
                     echo "<div class='toastTrigger'>";
                         echo "<input type='hidden' class='hiddeninput' id='error' name='hiddencontainer' value='$msg'/>";
                     echo "</div>";
@@ -95,6 +95,6 @@
             <a href="criar_conta.php"><button type="button" id="criar-link">Criar conta</button></a>
         </div>
         <!-- Importação do javascript -->
-        <script src="./js/forms.js" defer></script>
+        <script src="./js/forms.js"></script>
     </body>
 </html>

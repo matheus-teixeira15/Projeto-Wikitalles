@@ -12,6 +12,10 @@ const toastDetails = {
         icon: 'fa-circle-xmark',
         text: 'E-mail ou senha incorretos',
     },
+    warning: {
+        icon: 'fa-triangle-exclamation',
+        text: 'Aviso: e-mail indisponível',
+    },
 }
 
 const removeToast = (toast) => {
